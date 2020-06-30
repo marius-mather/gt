@@ -246,6 +246,8 @@ pct <- function(x) {
 #' @import rlang
 #' @export
 cells_title <- function(groups = c("title", "subtitle")) {
+  # Check argument is valid
+  rlang::arg_match(groups)
 
   # Capture expression for the `groups` argument
   group_expr <- rlang::enquo(groups)
