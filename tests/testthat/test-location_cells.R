@@ -25,6 +25,9 @@ selection_value <- function(html, key) {
 }
 
 test_that("the `cells_title()` function works correctly", {
+  # Expect an invalid option to raise an error
+  expect_error(cells_title(groups = "text"),
+               '`groups` must be one of "title" or "subtitle"')
 
   # Create a `cells_title` object with the `title` option
   helper_cells_title <- cells_title(groups = "title")
